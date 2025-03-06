@@ -1,0 +1,36 @@
+{
+  "name": "financli",
+  "module": "index.ts",
+  "version": "1.0.0",
+  "description": "A minimal CLI for managing your finances",
+  "bin": {
+    "fin": "./dist/index.js"
+  },
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "bun build ./index.ts --outdir ./dist --target node",
+    "prepublishOnly": "bun run build"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/prompts": "^2.4.9",
+    "@types/yargs": "^17.0.33"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@poppinss/cliui": "^6.4.2",
+    "lowdb": "^7.0.1",
+    "prompts": "^2.4.2",
+    "uuid": "^11.1.0",
+    "yargs": "^17.7.2"
+  }
+}
